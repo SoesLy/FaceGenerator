@@ -39,10 +39,18 @@ public class HelloApplication extends Application {
         drawShape();
         drawMouth(50);
         drawEyes();
+        drawNose(25);
+        drawEars(70);
+
+    }
+
+    private static void drawNose(int noseSize) {
+        gc.strokeOval(290, 300, noseSize, noseSize);
     }
 
     public static void drawShape() {
         gc.strokeOval(150, 150, 300, 300);
+
     }
 
     public static void drawMouth(int mouthSize) {
@@ -56,7 +64,15 @@ public class HelloApplication extends Application {
         gc.fillOval(360,220,20,20);
     }
 
+    private static void drawEars(int earSize) {
+        gc.strokeOval(150, 150, earSize, earSize);
+
+    }
+
     public static void main(String[] args) {
+
         launch();
     }
+
+
 }
