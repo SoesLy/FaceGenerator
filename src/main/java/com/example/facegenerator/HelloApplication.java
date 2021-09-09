@@ -41,23 +41,31 @@ public class HelloApplication extends Application {
         drawEyes();
         drawNose(25);
         drawEars(70);
-
     }
 
     private static void drawNose(int noseSize) {
+        gc.setFill(Color.LIGHTPINK);
         gc.strokeOval(290, 300, noseSize, noseSize);
+        gc.fillOval(300,300, noseSize, noseSize);
+    }
+
+    private static void drawEars(int earSize) {
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(150, 150, earSize, earSize);
+        gc.fillOval(375,150, earSize, earSize);
     }
 
     public static void drawShape() {
         gc.setFill(Color.LIGHTPINK);
         gc.fillOval(150, 150, 300,300);
-
-
     }
 
     public static void drawMouth(int mouthSize) {
+        //String mood = "Shocked"
+        //if (mood.equalsIgnoreCase("Shocked"))
         gc.setFill(Color.BLACK);
         gc.fillOval(280,370,mouthSize,mouthSize);
+
     }
 
     public static void drawEyes() {
@@ -66,10 +74,6 @@ public class HelloApplication extends Application {
         gc.fillOval(360,220,20,20);
     }
 
-    private static void drawEars(int earSize) {
-        gc.strokeOval(150, 150, earSize, earSize);
-
-    }
 
     public static void main(String[] args) {
 
