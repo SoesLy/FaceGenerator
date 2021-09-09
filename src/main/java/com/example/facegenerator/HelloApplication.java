@@ -49,7 +49,9 @@ public class HelloApplication extends Application {
     }
 
     public static void drawShape() {
-        gc.strokeOval(150, 150, 300, 300);
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(150, 150, 300,300);
+
 
     }
 
