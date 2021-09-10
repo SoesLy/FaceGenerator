@@ -34,13 +34,16 @@ public class HelloApplication extends Application {
 
         stage.show();
     }
-
     public static void drawPrimitiveFace() {
         drawShape();
+        drawCheeks();
+        drawHair();
         drawMouth(50);
         drawEyes();
+        drawEyebrows();
         drawNose(25);
         drawEars(70);
+        drawPupil();
     }
 
     private static void drawNose(int noseSize) {
@@ -48,6 +51,7 @@ public class HelloApplication extends Application {
         gc.strokeOval(290, 300, noseSize, noseSize);
         gc.fillOval(300,300, noseSize, noseSize);
     }
+
 
     private static void drawEars(int earSize) {
         gc.setFill(Color.LIGHTPINK);
@@ -59,12 +63,21 @@ public class HelloApplication extends Application {
         gc.setFill(Color.LIGHTPINK);
         gc.fillOval(150, 150, 300,300);
     }
+    private static void drawCheeks() {
+        gc.setFill(Color.HOTPINK);
+        gc.fillOval(180,300,50,50);
+        gc.fillOval(370, 300, 50, 50);
+    }
+    private static void drawHair() {
+        gc.setFill(Color.YELLOW);
+        gc.fillOval(10,18,30,31);
+    }
 
     public static void drawMouth(int mouthSize) {
         //String mood = "Shocked"
-        //if (mood.equalsIgnoreCase("Shocked"))
+        //if (mood.equals("Shocked"))
         gc.setFill(Color.BLACK);
-        gc.fillOval(280,370,mouthSize,mouthSize);
+        gc.fillOval(280, 370, mouthSize, mouthSize);
 
     }
 
@@ -72,6 +85,16 @@ public class HelloApplication extends Application {
         gc.setFill(Color.BLACK);
         gc.fillOval(220,220,20,20);
         gc.fillOval(360,220,20,20);
+    }
+    private static void drawPupil() {
+        gc.setFill(Color.WHITE);
+        gc.fillOval(230,230,5,5);
+        gc.fillOval(370,230,5,5);
+    }
+
+    private static void drawEyebrows() {
+        gc.strokeLine(210, 210, 240 , 200);
+        gc.strokeLine(350, 200, 380,210);
     }
 
 
