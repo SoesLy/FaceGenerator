@@ -63,8 +63,7 @@ public class HelloApplication extends Application {
         //Third Face
         gc.strokeArc(200,280,100,80,70,40, ArcType.ROUND);
         gc.setFill(Color.PINK);
-        gc.fillOval(200,200,50,50);
-
+        gc.fillOval(225,240,50,50);
     }
 
     private static void drawEars(int earSize) {
@@ -148,6 +147,10 @@ public class HelloApplication extends Application {
         //First Face
         //gc.setFill(Color.BROWN);
         //gc.fillOval(180,180,30,31);
+
+        //Third Face
+        gc.setFill(Color.GRAY);
+        gc.fillArc(155, 102,185, 100, 0, 180, ArcType.OPEN);
     }
 
     private static void drawHat() {
