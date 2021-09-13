@@ -1,5 +1,7 @@
 package com.example.facegenerator;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
@@ -9,8 +11,10 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class HelloApplication extends Application {
     static int width = 600;
@@ -34,6 +38,16 @@ public class HelloApplication extends Application {
         drawPrimitiveFace();
 
         stage.show();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.1), event -> {
+            gc.clearRect(0, 0, width, height);
+            try {
+                drawPrimitiveFace();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }));
+        timeline.setCycleCount(360);
+        timeline.play();
     }
 
     public static void drawPrimitiveFace() {
@@ -51,9 +65,10 @@ public class HelloApplication extends Application {
 
 
     private static void drawNose(int noseSize) {
-        //gc.setFill(Color.LIGHTPINK);
-        //gc.strokeOval(290, 300, noseSize, noseSize);
-        //gc.fillOval(300,300, noseSize, noseSize);
+        //First Face
+        gc.setFill(Color.LIGHTPINK);
+        gc.strokeOval(290, 300, noseSize, noseSize);
+        gc.fillOval(300,300, noseSize, noseSize);
 
         //Second face
         //gc.setFill(Color.GREENYELLOW);
@@ -61,15 +76,20 @@ public class HelloApplication extends Application {
         //gc.fillOval(280,300, noseSize, noseSize);
 
         //Third Face
-        gc.strokeArc(200,280,100,80,70,40, ArcType.ROUND);
-        gc.setFill(Color.PINK);
-        gc.fillOval(225,240,50,50);
+        //gc.strokeArc(200,280,100,80,70,40, ArcType.ROUND);
+        //gc.setFill(Color.PINK);
+        //gc.fillOval(225,240,50,50);
     }
 
     private static void drawEars(int earSize) {
-        //gc.setFill(Color.LIGHTPINK);
-        //gc.fillOval(150, 150, earSize, earSize);
-        //gc.fillOval(375,150, earSize, earSize);
+        //First Face
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(150, 150, earSize, earSize);
+        gc.fillOval(375,150, earSize, earSize);
+        //Auricle
+        gc.setFill(Color.BROWN);
+        gc.fillOval(165,170,30,31);
+        gc.fillOval(395,170,30,31);
 
         //Second face
         //gc.setFill(Color.GREENYELLOW);
@@ -77,21 +97,23 @@ public class HelloApplication extends Application {
     }
 
     public static void drawShape() {
-        //gc.setFill(Color.LIGHTPINK);
-        //gc.fillOval(150, 150, 300,300);
+        //First Face
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(150, 150, 300,300);
 
-        //Second face
+        //Second Face
         //gc.setFill(Color.GREENYELLOW);
         //gc.fillOval(100,150,300,300);
 
-        //Third face
-        gc.setFill(Color.PINK);
-        gc.fillOval(100,100,300,400);
+        //Third Face
+        //gc.setFill(Color.PINK);
+        //gc.fillOval(100,100,300,400);
     }
     private static void drawCheeks() {
-        //gc.setFill(Color.HOTPINK);
-        //gc.fillOval(180,300,50,50);
-        //gc.fillOval(370, 300, 50, 50);
+        //First Face
+        gc.setFill(Color.HOTPINK);
+        gc.fillOval(180,300,50,50);
+        gc.fillOval(370, 300, 50, 50);
 
         //Second face
         //gc.setFill(Color.LIGHTPINK);
@@ -101,67 +123,80 @@ public class HelloApplication extends Application {
     public static void drawMouth(int mouthSize) {
         //String mood = "Shocked"
         //if (mood.equals("Shocked"))
-        //gc.setFill(Color.BLACK);
-        //gc.fillOval(280, 370, mouthSize, mouthSize);
+        //First Face
+        gc.setFill(Color.BLACK);
+        gc.fillOval(280, 370, mouthSize, mouthSize);
 
         //Second Face
         //gc.setFill(Color.LIGHTPINK);
         //gc.fillArc(240,340,100,80,10,20, ArcType.ROUND);
 
         //Third Face
-        gc.setFill(Color.BLACK);
-        gc.fillArc(200, 300, 100, 110, 180, 180, ArcType.OPEN);
+        //gc.setFill(Color.BLACK);
+        //gc.fillArc(200, 300, 100, 110, 180, 180, ArcType.OPEN);
 
 
     }
 
     public static void drawEyes() {
         gc.setFill(Color.BLACK);
-        //gc.fillOval(220,220,20,20);
-        //gc.fillOval(360,220,20,20);
+
+        //First Face
+        String firstFace = "face1";
+        gc.fillOval(220,220,20,20);
+        gc.fillOval(360,220,20,20);
 
         //Second Face
-        gc.fillOval(180,200,20,20);
-        gc.fillOval(320,200,20,20);
+        //gc.fillOval(180,200,20,20);
+        //gc.fillOval(320,200,20,20);
     }
     private static void drawPupil() {
         gc.setFill(Color.WHITE);
-        //gc.fillOval(230,230,5,5);
-        //gc.fillOval(370,230,5,5);
+
+        //First Face
+        gc.fillOval(230,230,5,5);
+        gc.fillOval(370,230,5,5);
 
         //Second Face
-        gc.fillOval(190,205,5,5);
-        gc.fillOval(330,205,5,5);
+        //gc.fillOval(190,205,5,5);
+        //gc.fillOval(330,205,5,5);
     }
 
     private static void drawEyebrows() {
-        //gc.strokeLine(210, 210, 240 , 200);
-        //gc.strokeLine(350, 200, 380,210);
+        //First Face
+        gc.strokeLine(210, 210, 240 , 200);
+        gc.strokeLine(350, 200, 380,210);
 
         //Second Face
-        gc.strokeLine(170,190,210,190);
-        gc.strokeLine(310,190,350,190);
+        //gc.strokeLine(170,190,210,190);
+        //gc.strokeLine(310,190,350,190);
     }
 
     private static void drawHair() {
         //First Face
-        //gc.setFill(Color.BROWN);
-        //gc.fillOval(180,180,30,31);
+        gc.setFill(Color.YELLOW);
+        gc.fillArc(205, 150,190, 100, 0, 180, ArcType.OPEN);
+        gc.strokeLine(220,175,205,200);
+        gc.strokeLine(225,173,210,200);
+        gc.strokeLine(230,170,215,200);
+        gc.strokeLine(235,165,220,200);
+        gc.strokeLine(240,165,225,200);
 
         //Third Face
-        gc.setFill(Color.GRAY);
-        gc.fillArc(155, 102,185, 100, 0, 180, ArcType.OPEN);
+        //gc.setFill(Color.GRAY);
+        //gc.fillArc(155, 102,185, 100, 0, 180, ArcType.OPEN);
     }
 
     private static void drawHat() {
         //Third Face
-        gc.setFill(Color.BLACK);
-        gc.fillArc(150, 50, 140, 150, 15, 180, ArcType.OPEN);
-        gc.strokeLine(100, 160, 340, 90);
+        //gc.setFill(Color.BLACK);
+        //gc.fillArc(150, 50, 140, 150, 15, 180, ArcType.OPEN);
+        //gc.strokeLine(100, 160, 340, 90);
     }
 
 
     public static void main(String[] args) {
+        Random random = new Random();
 
         launch();
     }
