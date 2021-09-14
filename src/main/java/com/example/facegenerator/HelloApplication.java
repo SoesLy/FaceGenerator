@@ -89,20 +89,21 @@ public class HelloApplication extends Application {
     }
 
     public static void drawMouth(int mouthSize) {
-        String mood = "Shocked";
-        if (mood.equals("Shocked")) {
-            //First Face
-            gc.setFill(Color.BLACK);
-            gc.fillOval(280, 370, mouthSize, mouthSize);
-        } else {
+        String mood = "Happy";
+        if (mood == "Happy"
+        ) {
+            //Third Face
+            //gc.setFill(Color.BLACK);
+            //gc.fillArc(250, 300, 100, 110, 180, 180, ArcType.OPEN);
+        } else  if (mood == "Sad"){
             //Second Face
             gc.setFill(Color.LIGHTPINK);
             gc.fillArc(240,340,100,80,10,20, ArcType.ROUND);
+        } else {
+            //First Face
+            gc.setFill(Color.BLACK);
+            gc.fillOval(280, 370, mouthSize, mouthSize);
         }
-        //Third Face
-        //gc.setFill(Color.BLACK);
-        //gc.fillArc(250, 300, 100, 110, 180, 180, ArcType.OPEN);
-
 
     }
 
