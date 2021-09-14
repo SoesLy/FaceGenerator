@@ -15,6 +15,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.Random;
+import java.util.Scanner;
 
 public class HelloApplication extends Application {
     static int width = 600;
@@ -63,45 +64,44 @@ public class HelloApplication extends Application {
         drawHat();
     }
 
-
     public static void drawShape() {
         //First Face
-        gc.setFill(Color.LIGHTPINK);
-        gc.fillOval(150, 150, 300,300);
+        //gc.setFill(Color.LIGHTPINK);
+        //gc.fillOval(150, 150, 300,300);
 
         //Second Face
-        //gc.setFill(Color.GREENYELLOW);
-        //gc.fillOval(100,150,300,300);
+        gc.setFill(Color.GREENYELLOW);
+        gc.fillOval(150,150,300,300);
 
         //Third Face
         //gc.setFill(Color.PINK);
-        //gc.fillOval(100,100,300,400);
+        //gc.fillOval(150,150,300,300);
     }
     private static void drawCheeks() {
         //First Face
-        gc.setFill(Color.HOTPINK);
-        gc.fillOval(180,300,50,50);
-        gc.fillOval(370, 300, 50, 50);
+        //gc.setFill(Color.HOTPINK);
+        //gc.fillOval(180,300,50,50);
+        //gc.fillOval(370, 300, 50, 50);
 
         //Second face
-        //gc.setFill(Color.LIGHTPINK);
-        //gc.fillOval(180,300,50,50);
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(180,300,50,50);
     }
 
     public static void drawMouth(int mouthSize) {
-        //String mood = "Shocked"
-        //if (mood.equals("Shocked"))
-        //First Face
-        gc.setFill(Color.BLACK);
-        gc.fillOval(280, 370, mouthSize, mouthSize);
-
-        //Second Face
-        //gc.setFill(Color.LIGHTPINK);
-        //gc.fillArc(240,340,100,80,10,20, ArcType.ROUND);
-
+        String mood = "Shocked";
+        if (mood.equals("Shocked")) {
+            //First Face
+            gc.setFill(Color.BLACK);
+            gc.fillOval(280, 370, mouthSize, mouthSize);
+        } else {
+            //Second Face
+            gc.setFill(Color.LIGHTPINK);
+            gc.fillArc(240,340,100,80,10,20, ArcType.ROUND);
+        }
         //Third Face
         //gc.setFill(Color.BLACK);
-        //gc.fillArc(200, 300, 100, 110, 180, 180, ArcType.OPEN);
+        //gc.fillArc(250, 300, 100, 110, 180, 180, ArcType.OPEN);
 
 
     }
@@ -111,8 +111,8 @@ public class HelloApplication extends Application {
 
         //First Face
         String firstFace = "face1";
-        gc.fillOval(220,220,20,20);
-        gc.fillOval(360,220,20,20);
+        //gc.fillOval(220,220,20,20);
+        //gc.fillOval(360,220,20,20);
 
         //Second Face
         //gc.fillOval(180,200,20,20);
@@ -122,8 +122,8 @@ public class HelloApplication extends Application {
         gc.setFill(Color.WHITE);
 
         //First Face
-        gc.fillOval(230,230,5,5);
-        gc.fillOval(370,230,5,5);
+        //gc.fillOval(230,230,5,5);
+        //gc.fillOval(370,230,5,5);
 
         //Second Face
         //gc.fillOval(190,205,5,5);
@@ -132,8 +132,8 @@ public class HelloApplication extends Application {
 
     private static void drawEyebrows() {
         //First Face
-        gc.strokeLine(210, 210, 240 , 200);
-        gc.strokeLine(350, 200, 380,210);
+        //gc.strokeLine(210, 210, 240 , 200);
+        //gc.strokeLine(350, 200, 380,210);
 
         //Second Face
         //gc.strokeLine(170,190,210,190);
@@ -141,9 +141,9 @@ public class HelloApplication extends Application {
     }
     private static void drawNose(int noseSize) {
         //First Face
-        gc.setFill(Color.LIGHTPINK);
-        gc.strokeOval(290, 300, noseSize, noseSize);
-        gc.fillOval(300,300, noseSize, noseSize);
+        //gc.setFill(Color.LIGHTPINK);
+        //gc.strokeOval(290, 300, noseSize, noseSize);
+        //gc.fillOval(300,300, noseSize, noseSize);
 
         //Second face
         //gc.setFill(Color.GREENYELLOW);
@@ -158,44 +158,53 @@ public class HelloApplication extends Application {
 
     private static void drawEars(int earSize) {
         //First Face
-        gc.setFill(Color.LIGHTPINK);
-        gc.fillOval(150, 150, earSize, earSize);
-        gc.fillOval(375,150, earSize, earSize);
+        //gc.setFill(Color.LIGHTPINK);
+        //gc.fillOval(150, 150, earSize, earSize);
+        //gc.fillOval(375,150, earSize, earSize);
         //Auricle
-        gc.setFill(Color.BROWN);
-        gc.fillOval(165,170,30,31);
-        gc.fillOval(395,170,30,31);
+        //gc.setFill(Color.BROWN);
+        //gc.fillOval(165,170,30,31);
+        //gc.fillOval(395,170,30,31);
 
         //Second face
-        //gc.setFill(Color.GREENYELLOW);
-        //gc.fillOval(80,160, earSize, earSize);
+        gc.setFill(Color.GREENYELLOW);
+        gc.fillOval(150,150, earSize, earSize);
+        gc.fillOval(375,150, earSize, earSize);
+        //Auricle
+        gc.setFill(Color.PINK);
+        gc.fillOval(165,170,30,31);
+        gc.fillOval(395,160,30,31);
     }
 
     private static void drawHair() {
         //First Face
-        gc.setFill(Color.YELLOW);
-        gc.fillArc(205, 150,190, 100, 0, 180, ArcType.OPEN);
-        gc.strokeLine(220,175,205,200);
-        gc.strokeLine(225,173,210,200);
-        gc.strokeLine(230,170,215,200);
-        gc.strokeLine(235,165,220,200);
-        gc.strokeLine(240,165,225,200);
+        //gc.setFill(Color.YELLOW);
+        //gc.fillArc(203, 150,190, 80, 0, 180, ArcType.OPEN);
+        //gc.strokeLine(220,175,205,200);
+        //gc.strokeLine(225,173,210,200);
+        //gc.strokeLine(230,170,215,200);
+        //gc.strokeLine(235,165,220,200);
+        //gc.strokeLine(240,165,225,200);
 
         //Third Face
-        //gc.setFill(Color.GRAY);
-        //gc.fillArc(155, 102,185, 100, 0, 180, ArcType.OPEN);
+        gc.setFill(Color.GRAY);
+        gc.fillArc(203, 150,190, 80, 0, 180, ArcType.OPEN);
     }
 
     private static void drawHat() {
         //Third Face
-        //gc.setFill(Color.BLACK);
-        //gc.fillArc(150, 50, 140, 150, 15, 180, ArcType.OPEN);
-        //gc.strokeLine(100, 160, 340, 90);
+        gc.setFill(Color.BLACK);
+        gc.fillArc(180, 100, 140, 150, 20, 180, ArcType.OPEN);
+        gc.strokeLine(150, 215, 340, 140);
     }
 
 
     public static void main(String[] args) {
         Random random = new Random();
+        Scanner scanner = new Scanner(System.in);
+        //Greetings
+        System.out.println("Hello, and welcome 😊");
+        System.out.println("Are you shocked?");
 
         launch();
     }
