@@ -55,46 +55,14 @@ public class HelloApplication extends Application {
         drawCheeks();
         drawMouth(50);
         drawEyes();
+        drawPupil();
         drawEyebrows();
         drawNose(25);
         drawEars(70);
-        drawPupil();
         drawHair();
         drawHat();
     }
 
-
-    private static void drawNose(int noseSize) {
-        //First Face
-        gc.setFill(Color.LIGHTPINK);
-        gc.strokeOval(290, 300, noseSize, noseSize);
-        gc.fillOval(300,300, noseSize, noseSize);
-
-        //Second face
-        //gc.setFill(Color.GREENYELLOW);
-        //gc.strokeOval(290,300, noseSize, noseSize);
-        //gc.fillOval(280,300, noseSize, noseSize);
-
-        //Third Face
-        //gc.strokeArc(200,280,100,80,70,40, ArcType.ROUND);
-        //gc.setFill(Color.PINK);
-        //gc.fillOval(225,240,50,50);
-    }
-
-    private static void drawEars(int earSize) {
-        //First Face
-        gc.setFill(Color.LIGHTPINK);
-        gc.fillOval(150, 150, earSize, earSize);
-        gc.fillOval(375,150, earSize, earSize);
-        //Auricle
-        gc.setFill(Color.BROWN);
-        gc.fillOval(165,170,30,31);
-        gc.fillOval(395,170,30,31);
-
-        //Second face
-        //gc.setFill(Color.GREENYELLOW);
-        //gc.fillOval(80,160, earSize, earSize);
-    }
 
     public static void drawShape() {
         //First Face
@@ -170,6 +138,37 @@ public class HelloApplication extends Application {
         //Second Face
         //gc.strokeLine(170,190,210,190);
         //gc.strokeLine(310,190,350,190);
+    }
+    private static void drawNose(int noseSize) {
+        //First Face
+        gc.setFill(Color.LIGHTPINK);
+        gc.strokeOval(290, 300, noseSize, noseSize);
+        gc.fillOval(300,300, noseSize, noseSize);
+
+        //Second face
+        //gc.setFill(Color.GREENYELLOW);
+        //gc.strokeOval(290,300, noseSize, noseSize);
+        //gc.fillOval(280,300, noseSize, noseSize);
+
+        //Third Face
+        //gc.strokeArc(200,280,100,80,70,40, ArcType.ROUND);
+        //gc.setFill(Color.PINK);
+        //gc.fillOval(225,240,50,50);
+    }
+
+    private static void drawEars(int earSize) {
+        //First Face
+        gc.setFill(Color.LIGHTPINK);
+        gc.fillOval(150, 150, earSize, earSize);
+        gc.fillOval(375,150, earSize, earSize);
+        //Auricle
+        gc.setFill(Color.BROWN);
+        gc.fillOval(165,170,30,31);
+        gc.fillOval(395,170,30,31);
+
+        //Second face
+        //gc.setFill(Color.GREENYELLOW);
+        //gc.fillOval(80,160, earSize, earSize);
     }
 
     private static void drawHair() {
